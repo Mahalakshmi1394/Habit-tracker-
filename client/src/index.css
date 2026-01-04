@@ -1,0 +1,74 @@
+:root {
+  /* "IT GIRL" Aesthetic: Dark Baby Pink, Rose, Soft White, Warm Greys */
+  --color-lavender: #FDF2F8;
+  /* Very light pink background */
+  --color-blush: #FBCFE8;
+  /* Lighter Pink */
+  --color-rose: #EC4899;
+  /* "Dark Baby Pink" / Hot Pink accent */
+  --color-sage: #F472B6;
+  /* Replacing sage with a medium pink for checkmarks to match theme */
+  --color-cream: #FFF1F2;
+  /* Rose tint white */
+  --color-soft-white: #FFFFFF;
+
+  --color-text-main: #831843;
+  /* Dark Rose/Burgundy for text */
+  --color-text-muted: #BC5483;
+  /* Muted Rose */
+
+  --color-bg: #FDF2F8;
+  /* Light Pink Bg */
+
+  --shadow-soft: 0 10px 30px -10px rgba(236, 72, 153, 0.2);
+  --shadow-hover: 0 15px 40px -10px rgba(236, 72, 153, 0.3);
+
+  --radius-lg: 32px;
+  --radius-md: 24px;
+  --radius-sm: 16px;
+
+  --font-main: 'Poppins', sans-serif;
+  --font-serif: 'Playfair Display', serif;
+  /* Elegant serif for quotes */
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-main);
+  background-color: var(--color-bg);
+  color: var(--color-text-main);
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+input,
+textarea {
+  font-family: inherit;
+  outline: none;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-lavender);
+  border-radius: 4px;
+}
