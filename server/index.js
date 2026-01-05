@@ -1,3 +1,4 @@
+const path = require('path');
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
@@ -12,6 +13,9 @@ const PORT = process.env.PORT || 5000;
 app.use(cors());
 app.use(express.json());
 
+// Serve static files from the React client
+app.use(express.static(path.join(__dirname, '../client/dist')));
+
 // Database Connection
 mongoose.connect(process.env.MONGO_URI)
     .then(() => console.log('✅ MongoDB connected successfully'))
@@ -24,6 +28,11 @@ mongoose.connect(process.env.MONGO_URI)
 app.use('/api/auth', require('./routes/auth'));
 app.use('/api/habits', require('./routes/habits'));
 app.use('/api/logs', require('./routes/logs'));
+
+// Any route not handled by the API will be served by the React app
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, '../client/dist', 'index.html'));
+});
 
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
